@@ -30,7 +30,6 @@
 
 
   <div *ngIf="selectedPipo">
- 
     <h2>{{selectedPipo.name | uppercase}} Details</h2>
     <div><span>id: </span>{{selectedPipo.id}}</div>
     <div>
@@ -38,5 +37,4 @@
         <input [(ngModel)]="selectedPipo.name" placeholder="name">
       </label>
     </div>
-   
   </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pipo } from '../pipo';
 import { PIPOS } from '../mock-pipo';
+import { PipoService } from '../pipo.service';
 @Component({
   selector: 'app-pipo',
   templateUrl: './pipo.component.html',
@@ -20,9 +21,15 @@ export class PipoComponent implements OnInit {
     this.selectedPipo = pipo;
   }
 
-  constructor() { }
+  constructor(private pipoService: PipoService) { }
+
+  getPipos(): void {
+    // this.pipos = this.pipoService.getPipos();
+    this.pipoService.getPipos().subscribe(pipos => this.pipos = pipos);
+  }
 
   ngOnInit() {
+    this.getPipos();
   }
 
 }
